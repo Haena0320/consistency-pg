@@ -1,8 +1,7 @@
 # Examining a Consistency of Visual Commonsense Reasoning based on Person Grounding
 Dataset and PyTorch implementation of "Examining a Consistency of Visual Commonsense Reasoning based on Person Grounding" 
 
-<img src="https://github.com/Haena0320/vcr_pg_3/files/11563322/figure1.1.pdf"  width="700" height="370">
-
+<p align="center"><img width="693"  src='https://github.com/Haena0320/vcr_pg_3/assets/68367329/d7ca78e5-b780-4368-855a-7cf7d04d4394'>
 
 ## Introduction
 Visual Commonsense Reasoning-Contrast Sets (VCR-CS) is a dataset that explores the consistent commonsense reasoning ability of models based on person grounding.
