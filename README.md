@@ -6,96 +6,32 @@ Dataset and PyTorch implementation of "Examining a Consistency of Visual Commons
 
 ## Introduction
 Visual Commonsense Reasoning-Contrast Sets (VCR-CS) is a dataset that explores the consistent commonsense reasoning ability of models based on person grounding.
-Through manually annotation from the experts, we create VCR-CS dataset with 159 pairs. Here are the stats for VCR-CS.
-
-| |VCR-CS|
-|------|---|
-|Number of question|159|
-|Number of images|143|
-|Number of movie covered|16|
-|Average quesiton length|6.38|
-|Average answer length|7.08|
-|Average # of object mentioned|1.88|
-|Question/Image ratio|1.11|
 
 ## Dataset Access
 Dataset can be downloaded at [Google Drive](https://drive.google.com/drive/folders/1BuVRy1XDNqIKMtdY1f79gK5lBdlK3knm?usp=sharing).
 
 ## Dataset Format
 Here is a introduction to the data format.
-'''
-{'counter_question': ['What', 'is', [1], 'thinking', '?'],
- 'counter_answer_label': 0,
- 'movie': '3036_IN_TIME',
- 'objects': ['person',
-  'person',
-  'person',
-  'person',
-  'person',
-  'person',
-  'person',
-  'person',
-  'tie',
-  'chair'],
+```
+{'movie': '3036_IN_TIME',
+ 'objects': ['person','person','person','person', ...],
  'interesting_scores': [0],
  'answer_likelihood': 'possible',
  'img_fn': 'lsmdc_3036_IN_TIME/3036_IN_TIME_00.37.33.594-00.37.54.485@0.jpg',
  'metadata_fn': 'lsmdc_3036_IN_TIME/3036_IN_TIME_00.37.33.594-00.37.54.485@0.json',
  'original_question': ['What', 'is', [0], 'thinking', '?'],
+ 'counter_question': ['What', 'is', [1], 'thinking', '?'],
  'answer_match_iter': [1, 2, 3, 0],
  'answer_sources': [16688, 6052, 19179, 35],
- 'answer_choices': [[[1],
-   'is',
-   'thinking',
-   'she',
-   'would',
-   'rather',
-   'have',
-   'gone',
-   'to',
-   'the',
-   'science',
-   'museum',
-   'or',
-   'the',
-   'beach',
-   '.'],
-  ['She',
-   'wants',
-   [7],
-   'to',
-   'sit',
-   'back',
-   'in',
-   [9],
-   'and',
-   'let',
-   'her',
-   'take',
-   'care',
-   'of',
-   'the',
-   'cleanup',
-   '.'],
-  ['She', 'can', "'", 't', 'believe', 'what', 'she', 'is', 'seeing', '.'],
-  [[0],
-   'is',
-   'wondering',
-   'if',
-   [1],
-   'is',
-   'going',
-   'to',
-   'kiss',
-   'her',
-   '.']],
+ 'answer_choices': [[[1],'is','thinking','she','would','rather',...]...],
+ 'counter_answer_label': 0,
  'original_answer_label': 3,
  'img_id': 'val-12',
  'question_number': 0,
  'annot_id': 'val-35',
  'match_fold': 'val-0',
  'match_index': 35}
-'''
+```
 
 ## Framework Code
 Here is an quick start for our framework, PINT.
