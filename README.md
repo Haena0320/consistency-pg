@@ -17,7 +17,7 @@ Here is a introduction to the data format.
 
 ## Framework Code
 Here is an quick start for our framework, PINT.
-Code described here includes training and validation of PINT on VCR-CS.
+Code described here includes (1) training on VCR and (2) validation on VCR-CS.
 
 ## Baseline Models
 We describe baseline models here. 
