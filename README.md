@@ -15,6 +15,10 @@ Dataset can be downloaded at [Google Drive](https://drive.google.com/drive/folde
 ## Dataset Format
 Here is a introduction to the data format.
 
+## Framework Code
+Here is an quick start for our framework, PINT.
+Code described here includes training and validation of PINT on VCR-CS.
+
 ## Baseline Models
 We describe baseline models here. 
 They are selected from six Transformer based multimodal pretrained models which have great performance on vision-language understanding tasks including VCR dataset.
