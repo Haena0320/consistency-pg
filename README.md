@@ -6,8 +6,17 @@ Dataset and PyTorch implementation of "Examining a Consistency of Visual Commons
 
 ## Introduction
 Visual Commonsense Reasoning-Contrast Sets (VCR-CS) is a dataset that explores the consistent commonsense reasoning ability of models based on person grounding.
-
 Through manually annotation from the experts, we create VCR-CS dataset with 159 pairs. Here are the stats for VCR-CS.
+
+| |VCR-CS|
+|------|---|
+|Number of question|159|
+|Number of images|143|
+|Number of movie covered|16|
+|Average quesiton length|6.38|
+|Average answer length|7.08|
+|Average # of object mentioned|1.88|
+|Question/Image ratio|1.11|
 
 ## Dataset Access
 Dataset can be downloaded at [Google Drive](https://drive.google.com/drive/folders/1BuVRy1XDNqIKMtdY1f79gK5lBdlK3knm?usp=sharing).
