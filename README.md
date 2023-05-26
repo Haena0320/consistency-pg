@@ -35,6 +35,7 @@ Here is a introduction to the data format.
 ## Framework Code
 Here is an quick start for our framework, PINT.
 Code described here includes (1) Data processing, (2) training PINT on VCR and (3) validation on VCR-CS.
+We used single V100 GPU both to train and valid the PINT. 
 
  ### (1) Data Processing
  Run the preprocessing scripts in the environment described below. First generate VCR training data for PINT:
@@ -59,6 +60,7 @@ Inside the created container above, run
   ```
  
  ### (3) Validation on VCR-CS
+ Inside the created container above, run
  ```
 CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python inf_vcr_ce.py --txt_db "{path_for_vcr_vcr_cs.db}" --img_db "./../img_db/vcr_gt_val;./../img_db/vcr_val" --split val --output_dir {path_for_pint_checkpoint} --checkpoint 8000 --pin_mem --fp16
  ``` 
