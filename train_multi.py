@@ -208,9 +208,9 @@ def create_dataloaders(multitask, is_train, opts):
 
         elif task.startswith('itm'):
             if is_train:
-                #itm_q_txt_db = VcrTxtTokLmdb(txt_path, opts.max_txt_len, task="q")  # opts.train_itm_txt_dbs
-                itm_qa_txt_db = VcrTxtTokLmdb("vcr_data/txt_db_pg/train_aum_qa.db", opts.max_txt_len, task="qa") #
-                itm_qar_txt_db = VcrTxtTokLmdb("vcr_data/txt_db_pg/train_aum_qa.db", opts.max_txt_len, task="qa") #train_qar_aum_filtered6.db
+                itm_qa_txt_db = VcrTxtTokLmdb(txt_path, opts.max_txt_len, task="qa")  # opts.train_itm_txt_dbs
+                itm_qar_txt_db = VcrTxtTokLmdb(txt_path, opts.max_txt_len, task="qar")
+
                 dataset, collate_fn = build_vcr_itm_dataset(is_train, opts, [itm_qa_txt_db, itm_qar_txt_db], img_dbs)
 
                 #dataset, collate_fn = build_vcr_itm_dataset(is_train, opts, vcr_dbs, img_dbs)
@@ -218,7 +218,7 @@ def create_dataloaders(multitask, is_train, opts):
                 #val_itm_qar_txt_db = VcrTxtTokLmdb(opts.val_txt_db, opts.max_txt_len, task="qar")
                 dataset, collate_fn = build_vcr_itm_dataset(is_train, opts, vcr_dbs, img_dbs)
 
-                #-> qar 로만 한번 더 평가해야함.
+
         elif task.startswith("mlm"):
             dataset, collate_fn = build_vcr_mlm_dataset(is_train, opts, vcr_dbs, img_dbs)
         else:
