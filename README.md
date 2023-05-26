@@ -39,7 +39,10 @@ We used single V100 GPU both to train and valid the PINT.
  
 ### (0) Create a new python environment
 ```
- python -m venv villa
+ python -m venv pint
+ source pint/bin/activate
+ pip install -r requirements.txt
+ 
  ```
  
 ### (1) Data Processing
