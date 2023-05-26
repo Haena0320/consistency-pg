@@ -7,7 +7,7 @@ Dataset and PyTorch implementation of "Examining a Consistency of Visual Commons
 Visual Commonsense Reasoning-Contrast Sets (VCR-CS) is a dataset that explores the consistent commonsense reasoning ability of models based on person grounding.
 
 ## Dataset Access
-Dataset can be downloaded at github
+Our dataset is located at vcr_cs_val folder
 
 ## Dataset Format
 Here is a introduction to the data format.
