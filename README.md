@@ -36,19 +36,24 @@ Here is a introduction to the data format.
 Here is an quick start for our framework, PINT.
 Code described here includes (1) Data processing, (2) training PINT on VCR and (3) validation on VCR-CS.
 We used single V100 GPU both to train and valid the PINT. 
-
- ### (1) Data Processing
- Run the preprocessing scripts in the environment described below. First generate VCR training data for PINT:
+ 
+### (0) Create a new python environment
+```
+ python -m venv villa
+ ```
+ 
+### (1) Data Processing
+Run the preprocessing scripts in the environment described below. First generate VCR training data for PINT:
  ```
  python prepro_vcr_pg.py --annotation ../../train.jsonl --split train --output vcr_train_pint.db
  ```
 
- Next, process VCR-CS validation data for PINT
+Next, process VCR-CS validation data for PINT
  ```
  python prepro_vcr_pg.py --annotation ../../val_vcr_cs.jsonl --split val --output vcr_vcr_cs.db
  ```
  
- ### (2) Training PINT on VCR
+### (2) Training PINT on VCR
  First, run launch_container.sh following the scripts with the paths for each argument.
   ```
  source launch_container.sh ../../txt_db ../../img_db ../../finetune ../../pretrained
@@ -59,8 +64,8 @@ Inside the created container above, run
  CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python train_multi.py --config config/pretrain-vcr-multi-base.json --output_dir {path_for_pint_checkpoint} --train_person_mask --train_person_corrupt
   ```
  
- ### (3) Validation on VCR-CS
- Inside the created container above, run
+### (3) Validation on VCR-CS
+Inside the created container above, run
  ```
 CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python inf_vcr_ce.py --txt_db "{path_for_vcr_vcr_cs.db}" --img_db "./../img_db/vcr_gt_val;./../img_db/vcr_val" --split val --output_dir {path_for_pint_checkpoint} --checkpoint 7000 --pin_mem --fp16
  ``` 
