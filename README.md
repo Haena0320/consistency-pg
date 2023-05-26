@@ -6,8 +6,8 @@ Dataset and PyTorch implementation of "Examining a Consistency of Visual Commons
 ## Introduction
 Visual Commonsense Reasoning-Contrast Sets (VCR-CS) is a dataset that explores the consistent commonsense reasoning ability of models based on person grounding.
 
-## Dataset Access
-Dataset can be downloaded at [Google Drive](https://drive.google.com/drive/folders/1BuVRy1XDNqIKMtdY1f79gK5lBdlK3knm?usp=sharing).
+## Dataset and Checkpoint Access
+Dataset and best-checkpoint of PINT can be downloaded at [Google Drive](https://drive.google.com/drive/folders/1BuVRy1XDNqIKMtdY1f79gK5lBdlK3knm?usp=sharing).
 
 ## Dataset Format
 Here is a introduction to the data format.
@@ -62,7 +62,7 @@ Inside the created container above, run
  ### (3) Validation on VCR-CS
  Inside the created container above, run
  ```
-CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python inf_vcr_ce.py --txt_db "{path_for_vcr_vcr_cs.db}" --img_db "./../img_db/vcr_gt_val;./../img_db/vcr_val" --split val --output_dir {path_for_pint_checkpoint} --checkpoint 8000 --pin_mem --fp16
+CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python inf_vcr_ce.py --txt_db "{path_for_vcr_vcr_cs.db}" --img_db "./../img_db/vcr_gt_val;./../img_db/vcr_val" --split val --output_dir {path_for_pint_checkpoint} --checkpoint 7000 --pin_mem --fp16
  ``` 
 
 ## Baseline Models
