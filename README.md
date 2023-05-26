@@ -55,12 +55,13 @@ Code described here includes (1) Data processing, (2) training PINT on VCR and (
 
 Inside the created container above, run
   ```
- CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python train_multi.py --config config/pretrain-vcr-multi-base.json --output_dir {output_path} --train_person_mask --train_person_corrupt
+ CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python train_multi.py --config config/pretrain-vcr-multi-base.json --output_dir {path_for_pint_checkpoint} --train_person_mask --train_person_corrupt
   ```
  
  ### (3) Validation on VCR-CS
- + PINT
- 
+ ```
+CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python inf_vcr_ce.py --txt_db "{path_for_vcr_vcr_cs.db}" --img_db "./../img_db/vcr_gt_val;./../img_db/vcr_val" --split val --output_dir {path_for_pint_checkpoint} --checkpoint 8000 --pin_mem --fp16
+ ``` 
 
 ## Baseline Models
 We describe baseline models here. 
