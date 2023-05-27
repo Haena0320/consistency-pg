@@ -21,14 +21,14 @@ from apex import amp
 from horovod import torch as hvd
 
 from tqdm import tqdm
-from data.itm_vcr_pg2 import * #(VcrItmDataset,VcrItmValDataset, vcr_itm_collate,vcr_itm_val_collate,VcrTxtTokLmdb)
+from data.iptm import *
 from data import (TokenBucketSampler, PrefetchLoader, DetectFeatLmdb,
                   MetaLoader,
                   ImageLmdbGroup, ConcatDatasetWithLens,
                   VcrDataset, VcrEvalDataset,
                   vcr_collate, vcr_eval_collate,)
 from optim.adamw import RecAdam
-from data.mlm_vcr_pg import (VcrMlmDataset, vcr_mlm_collate) #, VcrTxtTokLmdb)
+from data.pmlm import (VcrMlmDataset, vcr_mlm_collate)
 from model.vcr_pretrain import UniterForVCRPretraining
 from optim import AdamW, get_lr_sched
 
