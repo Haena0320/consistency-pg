@@ -53,7 +53,8 @@ Run the preprocessing scripts in the environment described below. First generate
 
 Next, process VCR-CS validation data for PINT
  ```
- python prepro_vcr_pg.py --annotation ../../val_vcr_cs.jsonl --split val --output vcr_vcr_cs.db
+ python prepro_vcr_pg.py --annotation ../../val_vcr_cs_original.jsonl --split val --output val_vcr_cs_original.db
+  python prepro_vcr_pg.py --annotation ../../val_vcr_cs_counter.jsonl --split val --output val_vcr_cs_counter.db
  ```
  
 ### 2. Training PINT on VCR
@@ -70,7 +71,7 @@ Inside the created container above, run
 ### 3. Validation on VCR-CS
 Inside the created container above, run
  ```
-CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python inf_vcr_ce.py --txt_db "{path_for_vcr_vcr_cs.db}" --img_db "./../img_db/vcr_gt_val;./../img_db/vcr_val" --split val --output_dir {path_for_pint_checkpoint} --checkpoint 7000 --pin_mem --fp16
+CUDA_VISIBLE_DEVICES=3 horovodrun -np 1 python inf_vcr_ce.py --txt_db "{path_for_vcr_cs_original.db;path_for_vcr_cs_counter.db}" --img_db "./../img_db/vcr_gt_val;./../img_db/vcr_val" --split val --output_dir {path_for_pint_checkpoint} --checkpoint 7000 --pin_mem --fp16
  ``` 
 
 ## Baseline Models
