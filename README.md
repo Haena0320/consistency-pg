@@ -1,5 +1,5 @@
 # Examining a Consistency of Visual Commonsense Reasoning based on Person Grounding
-Dataset and PyTorch implementation of "Examining a Consistency of Visual Commonsense Reasoning based on Person Grounding" 
+Dataset and PyTorch implementation of "Examining a Consistency of Visual Commonsense Reasoning based on Person Grounding
 
 <p align="center"><img width="693"  src='https://github.com/Haena0320/vcr_pg_3/assets/68367329/d7ca78e5-b780-4368-855a-7cf7d04d4394'>
 
