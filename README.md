@@ -47,9 +47,9 @@ We used single V100 GPU both to train and valid the PINT.
  ```
  
 ### 1. Data Processing
-First we obtain the preprocessed image and text file from [VILLA](https://github.com/zhegan27/VILLA).
-We'll put this file on .../vcr_data for further preprocessing step.
-Next, run the preprocessing scripts in the environment described below. First generate VCR training data for PINT:
+First, obtain the preprocessed image and text file from VILLA. 
+Then, place them in .../vcr_data for further preprocessing step. 
+Next, run the preprocessing scripts in the environment described below. First generate VCR training data for PINT
  ```
  python prepro_vcr_pg.py --annotation ../../train.jsonl --split train --output vcr_train_pint.db
  ```
