@@ -23,7 +23,7 @@ import math
 import torch
 from torch import nn
 from apex.normalization.fused_layer_norm import FusedLayerNorm as BertLayerNorm
-from layers.layer_controller import AdapterController
+#from layers.layer_controller import AdapterController
 from layers.layer_utils import *
 logger = logging.getLogger(__name__)
 
@@ -171,16 +171,16 @@ class BertIntermediate(nn.Module):
         return hidden_states
 
 class BertOutput(nn.Module):
-    def __init__(self, config, use_adapter):
+    def __init__(self, config, use_adapter=None):
         super(BertOutput, self).__init__()
         self.dense = nn.Linear(config.intermediate_size, config.hidden_size)
         self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
-        if use_adapter:
-            self.adapter = AdapterController(config, place="upper")
-        else:
-            self.adapter = None
+        # if use_adapter:
+        #     self.adapter = AdapterController(config, place="upper")
+        # else:
+        self.adapter = None
 
     def forward(self, hidden_states, input_tensor, task):
         hidden_states = self.dense(hidden_states)

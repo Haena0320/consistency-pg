@@ -324,7 +324,7 @@ class UniterEncoder(nn.Module):
 
 class UniterModel(UniterPreTrainedModel):
 
-    def __init__(self, config, img_dim, use_adapter):
+    def __init__(self, config, img_dim, use_adapter=None):
         super().__init__(config)
 
         self.embeddings = UniterTextEmbeddings(config)

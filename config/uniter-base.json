@@ -13,5 +13,6 @@
   "use_adapter":false,
   "use_single_adapter":true,
   "tasks":["IQM"],
-  "use_fusion":true
+  "use_fusion":true,
+  "use_person_ids":false
 }

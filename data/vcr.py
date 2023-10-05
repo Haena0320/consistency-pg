@@ -67,7 +67,7 @@ class VcrDetectFeatTxtTokDataset(DetectFeatTxtTokDataset):
         # else:
         #     name = "val"
         # new_name2nbb = {l.replace("nlvr2", f"vcr_{name}"):v for l, v in self.img_db.name2nbb.items()}
-        #
+
 
 
         if self.img_db and self.img_db_gt:
@@ -76,7 +76,7 @@ class VcrDetectFeatTxtTokDataset(DetectFeatTxtTokDataset):
 
             # self.lens = [tl+self.img_db_gt.name2nbb[txt2img[id_][0]] +
             #          new_name2nbb[txt2img[id_][1]] for tl, id_ in zip(txt_lens, self.ids)]
-            #
+
 
 
         elif self.img_db:

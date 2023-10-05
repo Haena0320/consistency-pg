@@ -18,7 +18,7 @@ from .model import (
 class UniterForVisualCommonsenseReasoning(UniterPreTrainedModel):
     """ Finetune UNITER for VCR
     """
-    def __init__(self, config, img_dim, use_adapter): # bert_model_mlm_weights ()
+    def __init__(self, config, img_dim, use_adapter=None): # bert_model_mlm_weights ()
         super().__init__(config, img_dim)
         self.uniter = UniterModel(config, img_dim, use_adapter)
 
